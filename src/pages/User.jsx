@@ -28,7 +28,6 @@ const User = () => {
                 resetForm({values:{
                     name: data.result.name,
                     lastname: data.result.lastname,
-                    username: data.result.username,
                     password: "",
                 },});
                 toast.success("Actualizado con éxito.")
@@ -49,7 +48,6 @@ const User = () => {
                     initialValues={{
                         name: user.name,
                         lastname: user.lastname,
-                        username: user.username,
                         password: "",
                     }}
                     validate={(values) => {
@@ -68,13 +66,6 @@ const User = () => {
                             validations.lastname = 'El apellido solo puede contener letras';
                         } else if (values.lastname.length < 2) {
                             validations.lastname = 'Ingrese un apellido válido';
-                        }
-                        if (!values.username) {
-                            validations.username = 'Por favor ingresa un nombre de usuario válido';
-                        } else if (!/^[a-zA-Z0-9.\-_]+$/.test(values.username)) {
-                            validations.username = 'El nombre de usuario solo puede contener letras';
-                        } else if (values.username.length < 2) {
-                            validations.username = 'Ingrese un nombre de usuario válido';
                         }
                        if (values.password && values.password.length < 6) {
                             validations.password = 'La contraseña es demasiado corta';
@@ -115,22 +106,6 @@ const User = () => {
                                     />
                                         <ErrorMessage name='lastname' component={() => (
                                         <div className='form-error'>{errors.lastname}</div>
-                                    )} />
-                                </div>
-                            </div>
-                            <div className="form-group row">
-                                <label htmlFor="username" className="col-sm-2 col-form-label">
-                                    Username
-                                </label>
-                                <div className="col-sm-10">
-                                    <Field
-                                        type="text"
-                                        className="form-control"
-                                        name="username"
-                                        disabled={!editMode}
-                                    />
-                                    <ErrorMessage name='username' component={() => (
-                                        <div className='form-error'>{errors.username}</div>
                                     )} />
                                 </div>
                             </div>

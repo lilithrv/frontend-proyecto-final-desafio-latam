@@ -33,7 +33,6 @@ export default function Register() {
                     initialValues={{
                         name: '',
                         lastname: '',
-                        username: '',
                         email: '',
                         password: '',
                         repeatPassword: '',
@@ -60,15 +59,6 @@ export default function Register() {
                             validations.lastname = 'El apellido solo puede contener letras';
                         } else if (values.lastname.length < 2) {
                             validations.lastname = 'Ingrese un apellido válido';
-                        }
-
-                        // Validación username
-                        if (!values.username) {
-                            validations.username = 'Por favor ingresa un nombre de usuario válido';
-                        } else if (!/^[a-zA-Z0-9.\-_]+$/.test(values.username)) {
-                            validations.username = 'El nombre de usuario solo puede contener letras';
-                        } else if (values.username.length < 2) {
-                            validations.username = 'Ingrese un nombre de usuario válido';
                         }
 
                         // Validación email
@@ -139,22 +129,6 @@ export default function Register() {
                                         <div className='form-error'>{errors.lastname}</div>
                                     )} />
 
-                            </div>
-                            <div className='form-field'>
-                                <label className='form-label' htmlFor="username">Nombre de usuario</label>
-                                <Field
-                                    className="form-input"
-                                    type="text"
-                                    id='username'
-                                    name='username'
-                                    placeholder='username'
-                                />
-                                <ErrorMessage
-                                    className='form-error'
-                                    name='username'
-                                    component={() => (
-                                        <div className='form-error'>{errors.username}</div>
-                                    )} />
                             </div>
                             <div className='form-field'>
                                 <label className='form-label' htmlFor="email">Correo</label>

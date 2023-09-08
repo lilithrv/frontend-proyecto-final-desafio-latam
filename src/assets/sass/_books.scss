@@ -108,3 +108,15 @@
   left: unset !important;
   right: 0;
 }
+
+  //home
+  .loader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .spinner {
+    width: 30%;
+    height: 30%;
+}

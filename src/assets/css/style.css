@@ -16063,6 +16063,17 @@ img-comparison-slider:focus {
   right: 0;
 }
 
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  width: 30%;
+  height: 30%;
+}
+
 * {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
 }
